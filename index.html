@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>🔥 BUG WA PRO</title>
+    <style>
+        /* ---------- RESET & GLOBAL ---------- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #0a0a0a;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            color: #fff;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* ---------- BACKGROUND MATRIX ---------- */
+        #matrixCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        /* ---------- GLOW ORBS ---------- */
+        .orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(100px);
+            z-index: 0;
+            animation: orbFloat 12s ease-in-out infinite;
+        }
+        .orb1 { width: 400px; height: 400px; background: rgba(255,0,100,0.2); top: -100px; left: -100px; }
+        .orb2 { width: 500px; height: 500px; background: rgba(0,255,200,0.15); bottom: -150px; right: -150px; animation-delay: 4s; }
+        .orb3 { width: 300px; height: 300px; background: rgba(255,200,0,0.1); top: 50%; left: 50%; transform: translate(-50%,-50%); animation-delay: 2s; }
+        @keyframes orbFloat {
+            0%, 100% { transform: translate(0,0) scale(1); }
+            50% { transform: translate(40px,-40px) scale(1.2); }
+        }
+
+        /* ---------- MAIN CARD ---------- */
+        .card {
+            position: relative;
+            z-index: 10;
+            background: rgba(10, 15, 25, 0.85);
+            backdrop-filter: blur(20px);
+            border: 2px solid #ff0066;
+            border-radius: 30px;
+            padding: 40px 30px;
+            max-width: 520px;
+            width: 100%;
+            box-shadow: 0 0 80px rgba(255,0,100,0.15);
+            animation: borderPulse 4s ease-in-out infinite alternate;
+        }
+        @keyframes borderPulse {
+            0% { border-color: #ff0066; box-shadow: 0 0 80px rgba(255,0,100,0.15); }
+            100% { border-color: #ff8800; box-shadow: 0 0 120px rgba(255,136,0,0.3); }
+        }
+
+        /* ---------- HEADER ---------- */
+        .header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .header .icon {
+            font-size: 60px;
+            display: block;
+            animation: shake 2s infinite;
+        }
+        @keyframes shake {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(10deg); }
+            75% { transform: rotate(-10deg); }
+        }
+        h1 {
+            font-size: 28px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #ff0066, #ff8800);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 2px;
+            margin-top: 5px;
+        }
+        .sub {
+            color: #ff88aa;
+            font-size: 13px;
+            letter-spacing: 3px;
+            margin-top: 2px;
+        }
+        .sub span { animation: blink 1s infinite; }
+        @keyframes blink { 0%,100%{opacity:1;} 50%{opacity:0;} }
+
+        /* ---------- FORM ---------- */
+        .form-group {
+            margin-bottom: 16px;
+        }
+        label {
+            display: block;
+            color: #ffaacc;
+            font-size: 13px;
+            margin-bottom: 4px;
+            letter-spacing: 1px;
+        }
